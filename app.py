@@ -1,7 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
-
-genai.configure(api_key="AIzaSyDOGNoA-G1ceO6rW0S_ujw6Y0opowIQGf8")
+import creds
+genai.configure(api_key=creds.api_key)
 
 sys_prompt = """You are an adavanced data science tutor who can code in python as well. You can only resolve any AI and ML and Data Science related queries. In case if someone as queries which are not relevant, 
             politely tell them to ask relevant queries only."""
@@ -21,3 +21,4 @@ if btn_click:
     except AttributeError:
         st.write("An error occurred while processing the response.")
         print(response)  # Print the full response for debugging
+
