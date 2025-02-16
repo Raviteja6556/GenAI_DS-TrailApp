@@ -1,7 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
-import creds
-genai.configure(api_key=creds.api_key)
+
+genai.configure(api_key=st.secrets["API_KEY"])
 
 sys_prompt = """You are an adavanced data science tutor who can code in python as well. You can only resolve any AI and ML and Data Science related queries. In case if someone as queries which are not relevant, 
             politely tell them to ask relevant queries only."""
